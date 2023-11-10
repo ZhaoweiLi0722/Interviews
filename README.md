@@ -144,9 +144,14 @@
     - Diversity: This metric measures how dissimilar recommended videos are to each other. This metric is important to track, as users are more interested in diversified videos. To measure diversity, we calculate the average pairwise similarity (e.g., cosine similarity or dot product) between videos in the list. A low average pairwise similarity score indicates the list is diverse.
 mAP, MRR, nDCG are commonly used to measure ranking quality
 有几个ML model还没写完。下一篇补上吧。之后会再写一写AI相关的以及再收集一些AIGC相关的面试题。 图片都是网上找的，应该是Andrew的课程里的截图。大多数答案是我手敲的可能有错别字大家见谅
-Loss
+
+**Loss**
+
+
+
 1. 用MSE做loss的Logistic Rregression是convex problem吗
     No, not convex,
+![image](https://github.com/ZhaoweiLi0722/Interviews/assets/58875637/bd03f835-3318-4ff6-9c73-99ec8a710980)
 
 2. 解释并写出MSE的公式, 什么时候用到MSE?
     - Mean Square Error $\frac{1}{N}\sum_{i=1}^N(Y_i - \hat{Y}_i)^2$
@@ -161,13 +166,15 @@ Loss
     - Expectation with respect to the distribution $p$ of the logarithmic difference between the probabilities P and Q
     - Cross Entropy $H(P, Q) = -\sum_{x\in\mathcal{X}}P(x) \log Q(x) = H(p) +D_{KL}(P||Q)$, expected value of logq with respect to the distribution p
 5. Logistic Regression的loss是什么
-   
+   ![image](https://github.com/ZhaoweiLi0722/Interviews/assets/58875637/aba48f96-2f14-4298-81f3-8d0647f9ca35)
+
 
 6. Logistic Regression的 Loss 推导
     use Maximum Likelihood Estimation
 7. SVM的loss是什么
     - goal is to find a hyperplane that separates the data points of different classes with a maximum margin.
     - hinge loss formulation and the squared hinge loss formulation.
+![image](https://github.com/ZhaoweiLi0722/Interviews/assets/58875637/a817ee15-551a-48d6-95c2-8f270c205159)
 
 8. Multiclass Logistic Regression, 为什么用cross entropy做cost function
     - softmax regression/Multinomial logistic regression
