@@ -74,6 +74,13 @@
 4. 为什么L1比L2稀疏
    - L1 norm has corners at zero, while L2 norm is smooth and continuously differentiable
    - L1 norm penalty creates diamond-shaped constraint regions in the coefficient space, centered around the origin. As a result, the optimization process may drive some coefficient exactly to zero, leading to sparsity (the optimum solution/plain usually hits the vertex of the dimond) Whereas L2 norm is a ball, the optimum solution usually hits a point where the coefficients are non zero.
+   - Choice of regularization for a linear model with hundreds of millions of features:
+
+L0 Regularization: This is theoretically the best choice for feature selection as it directly minimizes the number of non-zero features. However, L0 regularization is non-convex and NP-hard to optimize, making it impractical for large-scale problems.
+
+L1 Regularization (Lasso): This is a practical choice for feature selection as it can shrink the less informative features' coefficients to zero, effectively performing feature selection. This is particularly useful if we believe that only a small percentage of features are informative, as stated in the scenario.
+
+L2 Regularization (Ridge): L2 regularization is not a good choice for feature selection as it does not promote sparsity in the model; instead, it shrinks coefficients toward zero but doesn't set them to zero. It is useful when we believe many features have small but non-zero effects.
 5. 为什么regularization works
     Regularization works by introducing penalty term into the objective function of a machine learning model. This penalty term encourage the model to have certain desirable properties, such as simplicity, sparsity, or smoothness (Adding more constrains to the coefficient). Reduce the variance.
 6. 为什么regularization用L1 L2，而不是L3, L4..
