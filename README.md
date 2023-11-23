@@ -24,6 +24,27 @@
     - Cross-Validation (split data into multi-fold，train each model on different fold and test on alternating set, evaluate their average performance)
     - Hypothesis Testing A/B testing
     - Domain Experties
+5. difference between generative and discriminative models
+The primary difference between generative and discriminative models in machine learning lies in their approach to understanding data and making predictions:
+
+1. **Generative Models:**
+   - **Objective:** Generative models aim to understand how the data is generated. They model the joint probability distribution \( P(X, Y) \), where \( X \) is the input data and \( Y \) is the label or output. In essence, they try to model how the input and output data are correlated.
+   - **Examples:** Naïve Bayes, Hidden Markov Models, Gaussian Mixture Models, and some types of Generative Adversarial Networks (GANs).
+   - **Usage:** These models are useful for tasks where we need to understand the underlying data generation process, such as in unsupervised learning tasks, density estimation, and generating new data samples that are similar to the training data.
+
+2. **Discriminative Models:**
+   - **Objective:** Discriminative models, on the other hand, focus on modeling the decision boundary between different classes. They model the conditional probability \( P(Y | X) \), i.e., the probability of the label \( Y \) given the input data \( X \). They essentially learn the boundaries between different classes.
+   - **Examples:** Logistic Regression, Support Vector Machines (SVM), Decision Trees, and most Neural Network architectures used for classification.
+   - **Usage:** These models are typically used for classification and regression tasks where the goal is to predict an output based on input features.
+
+**Key Differences:**
+
+- **Data Understanding:** Generative models capture the distribution of individual classes, while discriminative models focus on the distinction between different classes.
+- **Performance:** Discriminative models often outperform generative models in classification tasks, especially when the amount of data is large.
+- **Data Generation:** Generative models can generate new data samples, whereas discriminative models cannot.
+- **Complexity:** In general, generative models tend to be more complex as they attempt to model the distribution of each class.
+
+The choice between generative and discriminative models depends on the specific requirements of the task, such as the type of data, the amount of data, and whether the goal is to understand the data generation process or to differentiate between classes.
 ## Regression
 1. Linear Regression的基础假设是什么
     - There is a linear relationship between the independent variables(X) and the dependent variables (y)
