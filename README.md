@@ -127,7 +127,10 @@ L2 Regularization (Ridge): L2 regularization is not a good choice for feature se
     - Precision and Recall
     - F1-score (harmonic mean of precision and recall) provides a balanced evaluation metric for imbalanced dataset
     - Area Under the Precision-Recall Curve (AUPRC) always use when the focus is on the positive class robust to class imbalance
-    - Receiver Operating Characteristic (ROC) curve and the Area Under The Curve (AUC). ROC curve plots the true positive rate (recall) against the false positive rate at different classification thresholds. AUC is the area under the ROC curve it is widely used metric that quantifies the model’s discriminative power and is suitable for imbalanced dataset
+    - Receiver Operating Characteristic (ROC) curve and the Area Under The Curve (AUC). ROC curve plots the true positive rate (recall) against the false positive rate at different classification thresholds. AUC is the area under the ROC curve it is widely used metric that quantifies the model’s discriminative power and is suitable for imbalanced datasetdis(advantages: when our task have very high FN cost and focus on positive class, In cases where there is a significant class imbalance (a large number of negatives compared to positives), as is likely in the detection of rare defects, the AUROC can be misleadingly high. This happens because the metric evaluates how well the model can distinguish between classes across all thresholds, but it doesn’t necessarily reflect the performance in correctly identifying the rare positive cases (the defects).)
+    - Matthews Correlation Coefficient (MCC):
+MCC is a comprehensive metric that takes into account true positives, false positives, true negatives, and false negatives.
+It is more effective than accuracy in handling imbalanced data and is applicable to binary classification problems.
 3. 分类问题该选用什么metric，and why
     - Understand the problem, identify the importance of correctly classifying each class and whether there is a class imbalance in the dataset
     - Define evaluation goals, consider false positive vs false negative, different impacts? Decide whether the emphasis is on overall accuracy, precision or recall, or a balanced trade-off
